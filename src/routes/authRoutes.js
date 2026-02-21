@@ -8,5 +8,5 @@ authrouter.post('/verify-setup', verifyAndSetup);
 authrouter.post('/login', loginUser);
 authrouter.post('/refresh', refreshToken);
 authrouter.post('/logout', logoutUser);
-authrouter.get('/dirushan,fetchname');
+authrouter.get('/dirushan',fetchname);
 export default authrouter;
