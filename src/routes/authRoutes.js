@@ -1,5 +1,5 @@
 import express from 'express';
-import { inviteUser, verifyAndSetup ,loginUser ,logoutUser,refreshToken,fetchname} from '../controllers/authController.js';
+import { inviteUser, verifyAndSetup ,loginUser ,logoutUser,refreshToken} from '../controllers/authController.js';
 
 const authrouter = express.Router();
 
@@ -8,5 +8,5 @@ authrouter.post('/verify-setup', verifyAndSetup);
 authrouter.post('/login', loginUser);
 authrouter.post('/refresh', refreshToken);
 authrouter.post('/logout', logoutUser);
-authrouter.get('/dirushan',fetchname);
+
 export default authrouter;
