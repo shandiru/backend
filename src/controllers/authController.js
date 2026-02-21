@@ -127,3 +127,8 @@ export const logoutUser = async (req, res) => {
 
   res.status(200).json({ message: "Logged out successfully" });
 };
+
+export const fetchname = async (req,res)=>{
+
+  return "hi dirushan";
+}
