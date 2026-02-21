@@ -105,7 +105,7 @@ export const refreshToken = async (req, res) => {
     if (!user) return res.status(403).json({ message: "User not found" });
 
     const newAccessToken = generateAccessToken(user);
-
+    
     res.status(200).json({
       accessToken: newAccessToken,
       user: { name: user.firstName, role: user.role }
