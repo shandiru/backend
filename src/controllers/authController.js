@@ -124,7 +124,7 @@ export const logoutUser = async (req, res) => {
     secure: process.env.NODE_ENV === "production",
      sameSite: 'None',
   });
-
+   console.log("Refresh token cookie cleared"); // Debugging line
   res.status(200).json({ message: "Logged out successfully" });
 };
 
