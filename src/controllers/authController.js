@@ -83,7 +83,7 @@ export const loginUser = async (req, res) => {
  res.cookie('refreshToken', refreshToken, {
   httpOnly: true,
   secure: true,
-  sameSite: 'Strict',  // ✅ Cross-origin allow
+  sameSite: 'none',  // ✅ Cross-origin allow
   maxAge: 7 * 24 * 60 * 60 * 1000
 });
 
@@ -127,7 +127,7 @@ export const logoutUser = async (req, res) => {
   res.clearCookie("refreshToken", {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-     sameSite: 'Strict',
+     sameSite: 'none',
   });
    console.log("Refresh token cookie cleared"); // Debugging line
   res.status(200).json({ message: "Logged out successfully" });
