@@ -15,7 +15,12 @@ export const inviteUser = async (req, res) => {
 
     const token = crypto.randomBytes(32).toString('hex');
     const expires = Date.now() + 5 * 60 * 1000; 
-
+    const userExists = await User.findOne({ email });
+    if (userExists && userExists.isActive) {
+      return res.status(400).json({ message: "User already exists!" });
+    }else{
+      await User.deleteOne({ email, isActive: false });
+    }
     const newUser = new User({
       firstName, lastName, email, phone, gender, role: role || 'customer',
       emailToken: token,
