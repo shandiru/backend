@@ -83,7 +83,7 @@ export const loginUser = async (req, res) => {
  res.cookie('refreshToken', refreshToken, {
   httpOnly: true,
   secure: true,
-  sameSite: 'None',  // ✅ Cross-origin allow
+  sameSite: 'Strict',  // ✅ Cross-origin allow
   maxAge: 7 * 24 * 60 * 60 * 1000
 });
 
